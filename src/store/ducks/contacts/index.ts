@@ -4,7 +4,7 @@ import { ContactsState, ContactsTypes } from './types';
 const INITIAL_STATE: ContactsState = {
   data: [
     {
-      id: 1,
+      id: '1',
       name: 'Rocketseat',
     },
   ],

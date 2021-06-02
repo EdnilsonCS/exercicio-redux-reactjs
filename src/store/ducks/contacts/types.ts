@@ -13,7 +13,7 @@ export enum ContactsTypes {
  * Data types
  */
 export interface Contacts {
-  id: number;
+  id: string;
   name: string;
 }
 
