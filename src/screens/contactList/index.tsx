@@ -15,23 +15,25 @@ interface DispatchProps {
 
 type Props = StateProps & DispatchProps;
 
-const contactList: React.FC<Props> = (props) => {
-  const {contacts, createContact } = props;
-  const  handleSubmit = ()=>{
+const contactList: React.FC<Props> = props => {
+  const { contacts, createContact } = props;
+  const handleSubmit = () => {
     createContact({
       name: 'teste',
-      id: 1
-    })
-  }
+      id: 1,
+    });
+  };
   return (
     <div>
-      <button onClick={handleSubmit}>Adicionar um item</button>
-      {contacts.map(item=>(
+      <button onClick={handleSubmit} type="button">
+        Adicionar um item
+      </button>
+      {contacts.map(item => (
         <li>{item.name}</li>
       ))}
     </div>
   );
-}
+};
 
 const mapStateToProps = (state: ApplicationState) => ({
   contacts: state.contacts.data,

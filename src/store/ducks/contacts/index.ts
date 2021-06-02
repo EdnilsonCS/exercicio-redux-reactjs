@@ -33,19 +33,19 @@ const reducer: Reducer<ContactsState> = (state = INITIAL_STATE, action) => {
       };
 
     case ContactsTypes.CREATE_CONTACT:
-        return{
-          ...state,
-          loading: false,
-          error: false,
-          data: [ ...state.data, action.payload.data]
-        }
-    case ContactsTypes.DELETE_CONTACT:
-      return{
+      return {
         ...state,
         loading: false,
         error: false,
-        data: state.data.filter((item)=> item !== action.payload.id)
-      }
+        data: [...state.data, action.payload.data],
+      };
+    case ContactsTypes.DELETE_CONTACT:
+      return {
+        ...state,
+        loading: false,
+        error: false,
+        data: state.data.filter(item => item !== action.payload.id),
+      };
     default:
       return state;
   }
