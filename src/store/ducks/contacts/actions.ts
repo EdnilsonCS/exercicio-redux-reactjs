@@ -10,3 +10,5 @@ export const loadSuccess = (data: Contacts[]) =>
 export const loadFailure = () => action(ContactsTypes.LOAD_REQUEST);
 
 export const createContact = (data: Contacts) => action(ContactsTypes.CREATE_CONTACT, {data})
+
+export const deleteContact = (id: string) => action(ContactsTypes.DELETE_CONTACT, { id} )
