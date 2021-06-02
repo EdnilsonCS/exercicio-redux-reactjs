@@ -12,14 +12,14 @@ interface StateProps {
 
 interface DispatchProps {
   createContact(data: Contacts): void;
-  removeContact(id: string): void;
+  deleteContact(id: string): void;
 }
 
 type Props = StateProps & DispatchProps;
 
 const ContactList: React.FC<Props> = props => {
   const [value, setValue] = useState('');
-  const { contacts, createContact, removeContact } = props;
+  const { contacts, createContact, deleteContact } = props;
   const handleSubmit = () => {
     createContact({
       name: value,
@@ -39,7 +39,7 @@ const ContactList: React.FC<Props> = props => {
       {contacts.map(item => (
         <li>
           {item.name}
-          <button onClick={() => removeContact(item.id)} type="button">
+          <button onClick={() => deleteContact(item.id)} type="button">
             Remover
           </button>
         </li>
